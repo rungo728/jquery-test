@@ -2,52 +2,129 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>jQuery Practice</title>
+    <title>緊急の不用品回収センター</title>
     <link rel="stylesheet" href="style.css" charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="./main.js"></script>
   </head>
   <body>
-    <h1 id="title">タイトル</h1>
-    <!-- <img src="http://image.dlift.jp/images/spotPhoto/worldheritage179_2_20120928092627.jpg"/> -->
-    <h2 class="sub-title">サブタイトル</h2>
-    <p>
-      コンテンツコンテンツコンテンツコンテンツ<br>
-      コンテンツコンテンツコンテンツコンテンツ<br>
-      コンテンツコンテンツコンテンツコンテンツ<br>
-      コンテンツコンテンツコンテンツコンテンツ
-    </p>
-    <table>
-      <tbody>
-        <td>おじいさん</td>
-        <td>おばあさん</td>
-        <td>
-          <div>お父さん</div>
-          <div>お母さん</div>
-          <div>
-            <p>姉</p>
-            <p>私</p>
-            <p>弟</p>
-          </div>
-        </td>
-      </tbody>
-    </table>
-    <p class="red">contents</p>
-    <ul id="lists">
-    </ul>
-    <button id="hideButton">hide</button>
-    <button id="showButton">show</button>
-    <button id="appendButton">append</button>
-    <button id="removeButton">remove</button>
-    <button id="fadeInButton">fade in</button>
-    <button id="fadeOutButton">fade out</button>
-    <button id="addClassButton">add class</button>
-    <button id="removeClassButton">remove class</button>
-    <button id="getAttrButton">get attr</button>
-    <button id="changeAttrButton">change attr</button>
-    <form>
-      フォーム：<input type="text" name="name">
-    </form>
-    <button id="valButton">val</button>
+    <header class="main-header">
+      <h1 id= "header-logo" class= "header-logo">
+          <link rel="stylesheet" href="">
+        <span><img src="http://saikl.info/LP-mobile/img/title.gif" alt=""></span>
+      </h1>
+      <nav id="gnavi-pc" class="gnavi-pc">
+        <div class="header__menu-box">
+          <ul class="image-gallery">
+            <li>
+              <%= link_to root_path ,class:"writer" do %>By Kaoru Koyama
+              <span>Writer</span>
+              <% end %>
+            </li>
+            <li class="header__menu-box--center__category">
+              <%= link_to root_path,class:"header__menu-box--center__icon" do %>ご紹介
+              <i class="fas fa-sort-down"></i>
+              <span class="caret">Profile</span>
+              <% end %>
+              <ul class="header__menu-box--center__parents">
+                <li>
+                  <%= link_to root_path do %>プロフィール
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to root_path do %>料理
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to root_path do %>プログラミング
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to root_path do %>ブログ
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to root_path do %>ゲーム
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to root_path do %>フリーランス
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to root_path do %>動画編集
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to root_path do %>転職活動
+                  <% end %>
+                </li>
+              </ul>
+            </li>
+            <li class="bookingnow">
+              <%= link_to root_path do %>ポートフォリオ
+              <span>Portfolio</span>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="header-icon">
+        <ul class="clearfix">
+          <li class="base">
+          </li>
+          <li class="cart">
+            <%= link_to root_path do %>
+            <i class="fas fa-home"></i>
+            <%# <i class="fas fa-shopping-cart"></i>%>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <%# 隠しメニューが非表示の時に使うclass %>
+      <%# <div id="mobile-menu-toggle" class="mobile-menu-toggle">
+        <img src="//youange.com/shop/images/mobile-menu-toggle.png">
+      </div> %>
+      <%# 隠しメニューが表示された時に使うclass %>
+      <div class="mobile-menu-wrap">
+        <nav class="gnavi-sp" id="gnavi-sp">
+          <ul class="menu">
+            <li>
+              <%= link_to root_path do %>プロフィール
+              <% end %>
+              <ul class="sub-menu">
+                <li>
+                  <%= link_to root_path do %>料理
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to root_path do %>動画編集
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to root_path do %>プログラミング
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to root_path do %>転職活動
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to root_path do %>ポートフォリオ
+                  <% end %>
+                </li>
+              </ul>
+            </li>
+        </nav>
+      </div>
+    
+      <div class="hamburger" id="js-hamburger" onclick="toggleNav()">
+        <p>MENU</p>
+        <span class="hamburger__line hamburger__line--1"></span>
+        <span class="hamburger__line hamburger__line--2"></span>
+        <span class="hamburger__line hamburger__line--3"></span>
+      </div>
+      <div class="black-bg" id="js-black-bg"></div>
+    </header>
   </body>
 </html>
